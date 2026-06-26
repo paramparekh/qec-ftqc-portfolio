@@ -1,0 +1,3 @@
+# This file keeps the data/ directory tracked by git.
+# Actual CSV result files are excluded via .gitignore.
+# Commit config YAMLs and plot PNGs; never commit raw CSVs.

@@ -1,0 +1,40 @@
+# Experiment Configuration Template
+# Copy this file and rename it for each experiment.
+# Every experiment that produces a plot or CSV result must have a config file.
+
+experiment:
+  name: "experiment_name"          # snake_case identifier
+  description: "One-sentence description of what this experiment measures."
+  phase: 0                         # Which project phase this belongs to (0–7)
+  date: "2026-06-26"               # ISO date when experiment was first run
+
+# Reproducibility
+seed: 42                           # Random seed — NEVER change after first run
+output_dir: "data/"                # Where CSVs and plots are saved
+
+# Code parameters (fill in as relevant)
+code:
+  family: "surface"                # surface | repetition | steane | bb | hgp
+  distances: [3, 5, 7]             # Code distances to sweep
+  rounds: 5                        # Syndrome extraction rounds (if applicable)
+
+# Noise model
+noise:
+  model: "circuit_level"           # phenomenological | circuit_level | depolarizing
+  p_values: [0.001, 0.002, 0.005, 0.008, 0.01]  # Physical error rates to sweep
+  after_clifford_depolarization: 0.001
+  after_reset_flip_probability: 0.001
+  before_measure_flip_probability: 0.001
+
+# Simulation parameters
+simulation:
+  shots: 10000                     # Number of shots per (distance, p) pair
+  batch_size: 1000                 # Shots per batch (memory management)
+  decoder: "pymatching"            # pymatching | bposd | union_find
+
+# Output
+output:
+  save_csv: true                   # Save raw results to CSV
+  save_plot: true                  # Save plot as PNG
+  plot_format: "png"               # png | pdf | svg
+  plot_dpi: 150

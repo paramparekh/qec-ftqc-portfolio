@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qec-ftqc-portfolio"
+version = "0.1.0"
+description = "Circuit-Level Evaluation and Fault-Tolerant Gadget Simulation for Surface and Bivariate Bicycle Codes"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Param" }]
+
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "pandas>=2.1",
+    "matplotlib>=3.8",
+    "networkx>=3.2",
+    "stim>=1.14",
+    "pymatching>=2.1",
+    "ldpc>=0.1.60",
+    "qiskit>=1.0",
+    "python-sat>=1.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "black>=23.0",
+    "mypy>=1.6",
+    "jupyter>=1.0",
+    "ipykernel>=6.25",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["qec_toolkit*"]
+
+# ── Ruff (linter) ──────────────────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "W", "I", "UP"]
+ignore = ["E501"]   # line-length handled by black
+
+# ── Black (formatter) ──────────────────────────────────────────────────────
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+# ── Pytest ─────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+# ── mypy ───────────────────────────────────────────────────────────────────
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_return_any = true
+strict = false
