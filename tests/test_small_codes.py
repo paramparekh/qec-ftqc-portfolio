@@ -12,8 +12,8 @@ Known correct parameters to verify:
   [[7,1,3]] Steane code: n=7, k=1, d=3
 """
 
-import pytest
 import numpy as np
+import pytest
 
 
 @pytest.mark.xfail(reason="repetition.py not implemented — Phase 1", strict=False)

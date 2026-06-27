@@ -30,9 +30,9 @@ Interview note:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Optional
 
 import numpy as np
+
 
 # ── Placeholder: gf2_rank will be implemented in Phase 1 ───────────────────
 def _gf2_rank_placeholder(a: np.ndarray) -> int:
@@ -78,7 +78,7 @@ class CSSCode:
     hx: np.ndarray  # X-check matrix, shape (r_x, n)
     hz: np.ndarray  # Z-check matrix, shape (r_z, n)
     name: str = ""
-    distance: Optional[int] = field(default=None, repr=False)
+    distance: int | None = field(default=None, repr=False)
 
     def __post_init__(self) -> None:
         """Coerce to uint8 on construction."""

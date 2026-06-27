@@ -45,7 +45,6 @@ from __future__ import annotations
 
 import numpy as np
 
-
 # ══════════════════════════════════════════════════════════════════════════════
 # Phase 0 SKELETON — replace each function body in Phase 1
 # ══════════════════════════════════════════════════════════════════════════════
@@ -84,28 +83,26 @@ def gf2_rank(a: np.ndarray) -> int:
 
     Status: SKELETON — implement in Phase 1, Day 2.
     """
-    # TODO (Phase 1): implement proper GF(2) row reduction
-    # Reference implementation from the plan:
-    #
-    # a = (a.copy() % 2).astype(np.uint8)
-    # m, n = a.shape
-    # rank = 0
-    # for col in range(n):
-    #     pivot = None
-    #     for r in range(rank, m):
-    #         if a[r, col]:
-    #             pivot = r
-    #             break
-    #     if pivot is None:
-    #         continue
-    #     if pivot != rank:
-    #         a[[rank, pivot]] = a[[pivot, rank]]
-    #     for r in range(m):
-    #         if r != rank and a[r, col]:
-    #             a[r] ^= a[rank]
-    #     rank += 1
-    # return rank
-    raise NotImplementedError("gf2_rank: implement in Phase 1, Day 2")
+    a = (a.copy() % 2).astype(np.uint8)
+    m, n = a.shape
+    rank = 0
+    for col in range(n):
+        pivot = None
+        for r in range(rank, m):
+            if a[r, col]:
+                pivot = r
+                break
+        if pivot is None:
+            continue
+        if pivot != rank:
+            # Swap rows to bring the pivot row to the current rank index
+            a[[rank, pivot]] = a[[pivot, rank]]
+        for r in range(m):
+            if r != rank and a[r, col]:
+                # XOR subtraction equivalent in GF(2)
+                a[r] ^= a[rank]
+        rank += 1
+    return rank
 
 
 def gf2_rref(a: np.ndarray) -> tuple[np.ndarray, list[int]]:

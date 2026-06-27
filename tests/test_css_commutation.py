@@ -17,7 +17,6 @@ import pytest
 
 from qec_toolkit.codes.base import CSSCode
 
-
 # ══════════════════════════════════════════════════════════════════════════════
 # Phase 0 tests — run NOW (no NotImplementedError)
 # ══════════════════════════════════════════════════════════════════════════════

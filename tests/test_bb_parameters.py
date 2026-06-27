@@ -39,11 +39,11 @@ class TestBBCodeConstruction:
     def test_n_formula(self):
         """n = 2 * l * m."""
         from qec_toolkit.codes.bb import bb_css_code
-        l, m = 4, 5
+        ell, m = 4, 5
         A_terms = [(0, 0), (1, 0)]
         B_terms = [(0, 0), (0, 1)]
-        code = bb_css_code(l=l, m=m, A_terms=A_terms, B_terms=B_terms)
-        assert code.n == 2 * l * m
+        code = bb_css_code(l=ell, m=m, A_terms=A_terms, B_terms=B_terms)
+        assert code.n == 2 * ell * m
 
     def test_known_bb_72_12_6_parameters(self):
         """

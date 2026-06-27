@@ -23,19 +23,15 @@ import pytest
 
 # We import at module level; tests will be xfail until Phase 1 implements the functions.
 from qec_toolkit.verification.gf2 import (
-    gf2_rank,
-    gf2_rref,
     gf2_nullspace,
-    gf2_in_rowspace,
+    gf2_rank,
     symplectic_inner,
 )
-
 
 # ══════════════════════════════════════════════════════════════════════════════
 # gf2_rank tests
 # ══════════════════════════════════════════════════════════════════════════════
 
-@pytest.mark.xfail(reason="Phase 1 not implemented yet", strict=False)
 class TestGF2Rank:
     """Tests for gf2_rank(). All should pass after Phase 1, Day 2."""
 
