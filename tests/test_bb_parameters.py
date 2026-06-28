@@ -30,6 +30,7 @@ class TestBBCodeConstruction:
     def test_css_condition_holds(self):
         """BB codes must always satisfy H_X @ H_Z.T = 0 mod 2 by construction."""
         from qec_toolkit.codes.bb import bb_css_code
+
         # Simple example: l=3, m=3
         A_terms = [(0, 0), (1, 0)]  # A = 1 + x
         B_terms = [(0, 0), (0, 1)]  # B = 1 + y
@@ -39,6 +40,7 @@ class TestBBCodeConstruction:
     def test_n_formula(self):
         """n = 2 * l * m."""
         from qec_toolkit.codes.bb import bb_css_code
+
         ell, m = 4, 5
         A_terms = [(0, 0), (1, 0)]
         B_terms = [(0, 0), (0, 1)]
@@ -54,6 +56,7 @@ class TestBBCodeConstruction:
         n=72, k=12, d=6, FOM = 12*36/72 = 6.0
         """
         from qec_toolkit.codes.bb import bb_css_code
+
         A_terms = [(0, 0), (1, 0), (2, 0)]  # 1 + x + x^2
         B_terms = [(0, 0), (0, 1), (0, 2)]  # 1 + y + y^2
         code = bb_css_code(l=6, m=6, A_terms=A_terms, B_terms=B_terms)

@@ -1,29 +1,22 @@
 """
-qec_toolkit — End-to-End QEC / FTQC Simulation Toolkit
-=======================================================
+qec_toolkit - End-to-end QEC / FTQC simulation toolkit.
 
-A reproducible Python package for:
-  - Stabilizer/CSS code construction (GF(2) linear algebra)
-  - Syndrome-extraction circuit generation
-  - Detector error model (DEM) workflows
-  - MWPM and BP-OSD decoding
-  - Logical error rate estimation and threshold analysis
-  - Fault-tolerant gadget demonstrations
+This package is being built as a reproducible research-engineering portfolio
+for circuit-level quantum error correction and fault-tolerant gadget studies.
 
-Project:
-  Circuit-Level Evaluation and Fault-Tolerant Gadget Simulation
-  for Surface and Bivariate Bicycle Codes
+Implemented so far
+------------------
+- Phase 0: repository structure, environment, standards, and test skeleton.
+- Phase 1: GF(2) linear algebra, CSS validation, repetition code, Steane code.
 
-Phases
-------
-Phase 0  – Kickoff & repo setup  (current)
-Phase 1  – GF(2) engine & stabilizer algebra
-Phase 2  – Surface-code baseline & MWPM decoding
-Phase 3  – Bivariate bicycle / qLDPC reproduction
-Phase 4  – Circuit-level syndrome extraction & detector models
-Phase 5  – Fault-tolerant gadgets & universal FTQC bridge
-Phase 6  – Resource estimation & algorithm-level execution
-Phase 7  – Packaging, report, portfolio polish
+Planned phases
+--------------
+- Phase 2: surface-code memory experiments and MWPM decoding.
+- Phase 3: bivariate-bicycle / qLDPC code construction.
+- Phase 4: circuit-level syndrome extraction and detector models.
+- Phase 5: fault-tolerant gadget demonstrations.
+- Phase 6: resource estimation.
+- Phase 7: packaging, report, and portfolio polish.
 """
 
 __version__ = "0.1.0"
